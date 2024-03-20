@@ -3,6 +3,8 @@ import { useParams } from "react-router-dom"
 import { CryptoDetailType } from "../../types/typesCrypto";
 import { getCryptoDetails } from "../../../services/cryptoApy";
 import { Header } from "../header";
+import CryptoChart from "../chart";
+
 
 
 export const CryptoDetails = () => {
@@ -27,44 +29,30 @@ export const CryptoDetails = () => {
         return <p>Carregando detalhes...</p>;
     }
 
+   
     return (
         <>
-       
-        <div className="container mx-auto p-4 container-main">
-        <Header />
-            <div className="bg-gray-800 rounded-lg shadow-md p-6">
-                <div className="flex items-center gap-4 flex-row">
-                <h2 className="text-white text-2xl font-bold mb-4">{id}</h2>
-                <img src={details.image.large} alt="Imagem da Moeda" className="w-40 h-40" />
-                <span className="text-base py-0.5 px-2.5 ml-2 bg-slate-700 text-sky-500 rounded">{details.symbol}</span>
-                </div>
-                <div className="grid grid-cols-2 gap-4">
-                    <div>
-                        <p className="text-sky-500">Preço Atual:</p>
-                        <p className="text-white text-2xl font-bold">${details.current_price}</p>
+       <div className="container mx-auto p-4 container-main">
+                <Header />
+                <div className="flex flex-wrap md:flex-nowrap gap-4 bg-gray-800 rounded-lg shadow-md p-6">
+                    <div className="flex-1">
+                        <div className="flex items-center gap-4 mb-4">
+                            <img src={details.image.large} alt="Imagem da Moeda" className="w-20 h-20" />
+                            <h2 className="text-white capitalize text-2xl">{details.name}</h2>
+                        </div>
+                        <div className="space-y-2">
+                            <p className="text-sky-500">Preço Atual: <span className="text-white text-xl font-bold">${details.current_price}</span></p>
+                            <p className="text-sky-500">Variação nas últimas 24h: <span className="text-white text-xl font-bold">${details.price_change_24h}</span></p>
+                            <p className="text-sky-500">Alta nas últimas 24h: <span className="text-white text-xl font-bold">${details.high_24h}</span></p>
+                            <p className="text-sky-500">Baixa nas últimas 24h: <span className="text-white text-xl font-bold">${details.low_24h}</span></p>
+                            <p className="text-sky-500">Volume nas últimas 24h: <span className="text-white text-xl font-bold">${details.total_volume}</span></p>
+                        </div>
                     </div>
-                    
-                    
-                    
-                    <div>
-                        <p className="text-sky-500">Variação nas últimas 24h:</p>
-                        <p className="text-white text-2xl font-bold">${details.price_change_24h}</p>
-                    </div>
-                    <div>
-                        <p className="text-sky-500">Alta nas últimas 24h:</p>
-                        <p className="text-white text-2xl font-bold">${details.high_24h}</p>
-                    </div>
-                    <div>
-                        <p className="text-sky-500">Baixa nas últimas 24h:</p>
-                        <p className="text-white text-2xl font-bold">${details.low_24h}</p>
-                    </div>
-                    <div className="col-span-2">
-                        <p className="text-sky-500">Volume nas últimas 24h:</p>
-                        <p className="text-white text-2xl font-bold">${details.total_volume}</p>
+                    <div className="flex-1">
+                        <CryptoChart coinId={id as string} />
                     </div>
                 </div>
             </div>
-        </div>
 
         </>
     );

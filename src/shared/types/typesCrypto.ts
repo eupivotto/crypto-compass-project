@@ -26,4 +26,31 @@ export interface CryptoDetailType {
     large: string;
 
   };
+  
+}
+
+export interface CryptoChart {
+  
+  data: {
+
+    prices: number[][];
+
+    market_caps: number[][];
+
+    total_volumes: number[][];
+
+  };
+}
+
+export interface ChartData {
+  labels: string[];
+  datasets: Dataset[];
+}
+
+interface Dataset {
+  label: string;
+  data: number[];
+  fill: boolean;
+  borderColor: string;
+  tension: number;
 }
