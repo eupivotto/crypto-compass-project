@@ -33,9 +33,9 @@ export const CryptoList = () => {
 
   return (
     <>
-      <div className="container mx-auto ">
-        <h1 className=" text-white text-2xl font-bold mt-4 mb-8">Top 10 Cryptos</h1>
-        <div className="grid grid-cols-1 gap-3 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-5 justify-items-center items-center">
+      <div className="container mx-auto">
+        <h1 className=" text-white text-2xl font-bold mt-6 mb-8 ms-10">Top 10 Cryptos</h1>
+        <div className="grid grid-cols-1 gap-3 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-5 justify-items-center items-center pb-12">
           {cryptos.map((crypto, index) => (
             <Link to={`crypto/${crypto.id}`}
               key={index}
