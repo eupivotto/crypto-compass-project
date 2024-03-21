@@ -17,10 +17,11 @@ export const getCryptosListing = async (): Promise<CryptoListingType[]> => {
       per_page: 10,
       page: 1,
       sparkline: false,
-      price_change_percentage: '1h,24h',
+      price_change_percentage: '24h',
       locale: 'pt'
     }
   });
+  console.log(response.data);
   // Mapeamento dos dados para o tipo definido
   return response.data.map((coin: CryptoListingType) => ({
     id: coin.id,
@@ -74,8 +75,11 @@ export const fetchChartData = async (coinId: string) => {
         borderColor: '#4facfe',
         tension: 0.1,
       }],
+      
     };
+
     return chartData;
+
   } catch (error) {
     if (axios.isAxiosError(error) && error.response) {
       // Isso vai logar o status do erro e a mensagem se disponível

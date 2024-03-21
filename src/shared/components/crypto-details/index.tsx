@@ -2,8 +2,10 @@ import { useEffect, useState } from "react";
 import { useParams } from "react-router-dom"
 import { CryptoDetailType } from "../../types/typesCrypto";
 import { getCryptoDetails } from "../../../services/cryptoApy";
+import {SkewLoader} from 'react-spinners';
 import { Header } from "../header";
-import CryptoChart from "../chart";
+import CryptoChart from "../graphic";
+
 
 
 
@@ -26,7 +28,9 @@ export const CryptoDetails = () => {
     }, [id]);
 
     if (!details) {
-        return <p>Carregando detalhes...</p>;
+        return <div className="flex justify-center items-center min-h-screen bg-gray-900">
+                 <SkewLoader color="#36afd6" />
+               </div>;
     }
 
    
@@ -34,7 +38,8 @@ export const CryptoDetails = () => {
         <>
        <div className="container mx-auto p-4 container-main">
                 <Header />
-                <div className="flex flex-wrap md:flex-nowrap gap-4 bg-gray-800 rounded-lg shadow-md p-6">
+                <div className="flex justify-center h-5/6 ">
+                <div className="flex flex-wrap bg-gray-900 gap-4 rounded-lg shadow-md p-6 w-8/12 h-5/6 mt-16 container-crypto-details">
                     <div className="flex-1">
                         <div className="flex items-center gap-4 mb-4">
                             <img src={details.image.large} alt="Imagem da Moeda" className="w-20 h-20" />
@@ -48,9 +53,10 @@ export const CryptoDetails = () => {
                             <p className="text-sky-500">Volume nas últimas 24h: <span className="text-white text-xl font-bold">${details.total_volume}</span></p>
                         </div>
                     </div>
-                    <div className="flex-1">
+                    <div className="flex-1 ">
                         <CryptoChart coinId={id as string} />
                     </div>
+                </div>
                 </div>
             </div>
 

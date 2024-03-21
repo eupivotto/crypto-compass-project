@@ -1,10 +1,11 @@
 import { configureStore } from '@reduxjs/toolkit';
-import rootReducer from './reducers'; // Importe seu reducer principal aqui
+import cryptoReducer from '../redux/cryptoSlice';
 
-const store = configureStore({
-  reducer: rootReducer,
+export const store = configureStore({
+  reducer: {
+    crypto: cryptoReducer,
+  },
 });
 
-
 export type RootState = ReturnType<typeof store.getState>;
-export default store;
+export type AppDispatch = typeof store.dispatch;

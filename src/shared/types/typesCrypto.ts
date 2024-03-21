@@ -5,6 +5,7 @@ export interface CryptoListingType {
   name: string;
   current_price: number;
   image: string;
+  price_change_percentage_24h: number;
 }
 
 // Para os detalhes de uma criptomoeda específica
@@ -28,6 +29,7 @@ export interface CryptoDetailType {
   };
   
 }
+
 
 export interface CryptoChart {
   

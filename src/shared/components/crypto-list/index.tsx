@@ -1,31 +1,40 @@
-import { useState, useEffect } from "react";
-import { getCryptosListing } from "../../../services/cryptoApy";
-import { CryptoListingType } from "../../types/typesCrypto";
+import {  useEffect } from "react";
+import { useSelector, useDispatch } from "react-redux";
+import { fetchCryptos } from "../../redux/cryptoSlice";
+
+import { RootState, AppDispatch } from "../../redux/store";
+
 import { Link } from "react-router-dom";
 
-import { ArrowUpIcon, ArrowDownIcon } from "@heroicons/react/24/outline";
+
 
 export const CryptoList = () => {
-  const [cryptos, setCryptos] = useState<CryptoListingType[]>([]);
+  // const [cryptos, setCryptos] = useState<CryptoListingType[]>([]);
+  const dispatch = useDispatch<AppDispatch>();
+
+  // Acessa o estado das criptomoedas e o status da requisição do Redux store
+  const cryptos = useSelector((state: RootState) => state.crypto.cryptos);
+  const status = useSelector((state: RootState) => state.crypto.status);
+  const error = useSelector((state: RootState) => state.crypto.error);
 
   useEffect(() => {
-    const fetchCryptos = async () => {
-      try {
-        const data = await getCryptosListing();
-        console.log(data);
-        setCryptos(data);
-        console.log(cryptos);
-      } catch (error) {
-        console.error("Erro ao buscar as criptomoedas:", error);
-      }
-    };
-    fetchCryptos();
-  }, [cryptos]);
+    if (status === 'idle') {
+      dispatch(fetchCryptos());
+    }
+  }, [status, dispatch]);
+
+ // Lógica de renderização baseada no status da requisição
+ if (status === 'loading') {
+  return <div>Loading...</div>;
+} else if (status === 'failed') {
+  return <div>Error: {error}</div>;
+}
+
 
   return (
     <>
       <div className="container mx-auto ">
-        <h1 className="text-2xl font-bold mt-4 mb-8">Top 10 Cryptos</h1>
+        <h1 className=" text-white text-2xl font-bold mt-4 mb-8">Top 10 Cryptos</h1>
         <div className="grid grid-cols-1 gap-3 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-5 justify-items-center items-center">
           {cryptos.map((crypto, index) => (
             <Link to={`crypto/${crypto.id}`}
@@ -47,19 +56,12 @@ export const CryptoList = () => {
                     <p className="text-sky-500">{crypto.symbol.toUpperCase()}</p>
                   </div>
                 </div>
-                <div className="flex items-center">
-                  {/* Exemplo de uso dos ícones, substitua 'increase' pela sua lógica */}
-                  {Math.random() > 0.5 ? (
-                    <ArrowUpIcon className="w-5 h-5 text-green-500" />
-                  ) : (
-                    <ArrowDownIcon className="w-5 h-5 text-red-500" />
-                  )}
-                </div>
+                
               </div>
               <div className="mt-4">
-                <p className="text-1xl font-semibold">{crypto.current_price}</p>{" "}
+                <p className="text-1xl font-semibold">${crypto.current_price}</p>{" "}
                 {/* Substitua com o preço real da API */}
-                <p className="text-sm text-gray-400">+0.25%</p>{" "}
+                <p className="text-sm text-gray-400">{crypto.price_change_percentage_24h !== null && crypto.price_change_percentage_24h !== undefined ? `${crypto.price_change_percentage_24h.toFixed(2)}%` : 'N/A'}</p>{" "}
                 {/* Substitua com a porcentagem real da API */}
               </div>
               {/* Placeholder para a linha do gráfico */}

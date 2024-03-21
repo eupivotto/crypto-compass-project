@@ -4,13 +4,14 @@ import LogoCompass from "../../../assets/images/logo-crypto-cmopass.png";
 
 import { Fragment } from "react";
 import { Disclosure, Menu, Transition } from "@headlessui/react";
+import { NavLink } from "react-router-dom";
 import { Bars3Icon, BellIcon, XMarkIcon, } from "@heroicons/react/24/outline";
 
 const navigation = [
-  { name: "Painel", href: "#", current: true },
-  { name: "Carteira", href: "#", current: false },
-  { name: "Transações", href: "#", current: false },
-  { name: "Calendar", href: "#", current: false },
+  { name: "Painel", href: "/" },
+  { name: "Carteira", href: "/carteira"},
+  { name: "Transações", href: "/transacoes" },
+  { name: "Contato", href: "/contato"},
 ];
 
 function classNames(...classes: string[]) {
@@ -28,7 +29,7 @@ export const Header = () => {
                 {/* Mobile menu button*/}
                 <Disclosure.Button className="relative inline-flex items-center justify-center rounded-md p-2 text-gray-400 hover:bg-gray-700 hover:text-white focus:outline-none focus:ring-2 focus:ring-inset focus:ring-white">
                   <span className="absolute -inset-0.5" />
-                  <span className="sr-only">Open main menu</span>
+                  <span className="sr-only">Abrir Menu Principal</span>
                   {open ? (
                     <XMarkIcon className="block h-6 w-6" aria-hidden="true" />
                   ) : (
@@ -47,19 +48,18 @@ export const Header = () => {
                 <div className="hidden sm:ml-6 sm:block">
                   <div className="flex space-x-4">
                     {navigation.map((item) => (
-                      <a
-                        key={item.name}
-                        href={item.href}
-                        className={classNames(
-                          item.current
-                            ? "bg-gray-900 text-white"
-                            : "text-gray-300 hover:bg-gray-700 hover:text-white",
-                          "rounded-md px-3 py-2 text-sm font-medium"
-                        )}
-                        aria-current={item.current ? "page" : undefined}
-                      >
-                        {item.name}
-                      </a>
+                     <NavLink
+                     key={item.name}
+                     to={item.href}
+                     className={({ isActive }) =>
+                       classNames(
+                         isActive ? "bg-sky-600 text-white" : "text-gray-300 hover:bg-gray-700 hover:text-white",
+                         "rounded-md px-3 py-2 text-sm font-medium"
+                       )
+                     }
+                   >
+                     {item.name}
+                   </NavLink>
                     ))}
                   </div>
                 </div>
