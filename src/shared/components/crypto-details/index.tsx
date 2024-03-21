@@ -5,6 +5,7 @@ import { getCryptoDetails } from "../../../services/cryptoApy";
 import {SkewLoader} from 'react-spinners';
 import { Header } from "../header";
 import CryptoChart from "../graphic";
+import { Footer } from "../footer";
 
 
 
@@ -58,8 +59,9 @@ export const CryptoDetails = () => {
                     </div>
                 </div>
                 </div>
+               
             </div>
-
+            <Footer />
         </>
     );
     

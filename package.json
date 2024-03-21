@@ -10,9 +10,13 @@
     "preview": "vite preview"
   },
   "dependencies": {
+    "@emotion/react": "^11.11.4",
+    "@emotion/styled": "^11.11.0",
     "@headlessui/react": "^1.7.18",
     "@heroicons/react": "^2.1.1",
     "@metamask/logo": "^3.1.2",
+    "@metamask/providers": "^16.0.0",
+    "@mui/material": "^5.15.14",
     "@phosphor-icons/react": "^2.0.15",
     "@reduxjs/toolkit": "^2.2.2",
     "@types/react-redux": "^7.1.33",
@@ -26,7 +30,8 @@
     "react-router-dom": "^6.22.3",
     "react-spinners": "^0.13.8",
     "redux": "^5.0.1",
-    "vite-plugin-svgr": "^4.2.0"
+    "vite-plugin-svgr": "^4.2.0",
+    "web3": "^4.6.0"
   },
   "devDependencies": {
     "@types/react": "^18.2.64",
