@@ -1,3 +1,4 @@
+/* eslint-disable @typescript-eslint/no-explicit-any */
 import axios from "axios";
 import { CryptoListingType, CryptoDetailType} from "../shared/types/typesCrypto";
 
@@ -28,7 +29,9 @@ export const getCryptosListing = async (): Promise<CryptoListingType[]> => {
     symbol: coin.symbol,
     name: coin.name,
     current_price: coin.current_price,
-    image: coin.image
+    image: coin.image,
+    total_volume: coin.total_volume,
+    market_cap_change_percentage_24h: coin.market_cap_change_percentage_24h
   }));
 };
 
@@ -65,15 +68,20 @@ export const fetchChartData = async (coinId: string) => {
         days: '1',
       }
     });
+
+    const sampleRate = 3; // Define a taxa de amostragem
+    const sampledPrices = data.prices.filter((_:any, index:number) => index % sampleRate === 0);
+
     // Transforme e retorne os dados conforme necessário...
     const chartData = {
-      labels: data.prices.map((price: [number, number]) => new Date(price[0]).toLocaleDateString()),
+      labels: sampledPrices.map((price: [number, number]) => new Date(price[0]).toLocaleDateString()),
       datasets: [{
         label: 'Preço USD',
-        data: data.prices.map((price: [number, number]) => price[1]),
+        data: sampledPrices.map((price: [number, number]) => price[1]),
         fill: false,
         borderColor: '#4facfe',
         tension: 0.1,
+        borderWidth: 2,
       }],
       
     };

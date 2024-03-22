@@ -45,6 +45,7 @@ export const CryptoDetails = () => {
                         <div className="flex items-center gap-4 mb-4">
                             <img src={details.image.large} alt="Imagem da Moeda" className="w-20 h-20" />
                             <h2 className="text-white capitalize text-2xl">{details.name}</h2>
+                            <p className="text-sm py-0.5 px-2.5 ml-2 bg-sky-600 text-sky-600 bg-opacity-25 rounded">{details.symbol}</p>
                         </div>
                         <div className="space-y-2">
                             <p className="text-sky-500">Preço Atual: <span className="text-white text-xl font-bold">${details.current_price}</span></p>
@@ -52,6 +53,7 @@ export const CryptoDetails = () => {
                             <p className="text-sky-500">Alta nas últimas 24h: <span className="text-white text-xl font-bold">${details.high_24h}</span></p>
                             <p className="text-sky-500">Baixa nas últimas 24h: <span className="text-white text-xl font-bold">${details.low_24h}</span></p>
                             <p className="text-sky-500">Volume nas últimas 24h: <span className="text-white text-xl font-bold">${details.total_volume}</span></p>
+                            <div className="flex w-full mt-4 ">Indicator</div>
                         </div>
                     </div>
                     <div className="flex-1 ">

@@ -4,6 +4,8 @@ import { fetchCryptos } from "../../redux/cryptoSlice";
 
 import { RootState, AppDispatch } from "../../redux/store";
 
+import { HigthLowIndicator } from "../higth-low-indicator";
+
 import { Link } from "react-router-dom";
 
 
@@ -58,17 +60,17 @@ export const CryptoList = () => {
                 </div>
                 
               </div>
-              <div className="mt-4">
+              <div className="mt-2">
                 <p className="text-1xl font-semibold">${crypto.current_price}</p>{" "}
-                {/* Substitua com o preço real da API */}
-                <p className="text-sm text-gray-400">{crypto.price_change_percentage_24h !== null && crypto.price_change_percentage_24h !== undefined ? `${crypto.price_change_percentage_24h.toFixed(2)}%` : 'N/A'}</p>{" "}
-                {/* Substitua com a porcentagem real da API */}
+               
               </div>
-              {/* Placeholder para a linha do gráfico */}
-              <div className="mt-4 h-2 bg-gray-700 rounded-full overflow-hidden">
-                <div className="bg-blue-600 h-2" style={{ width: "50%" }}></div>{" "}
-                {/* Substitua '50%' pela porcentagem real da API */}
-               </div>
+            
+                <div>
+                 <p className="text-gray-500 text-xs">Alteração de preço 24h</p> 
+                <HigthLowIndicator changePercentage={crypto.market_cap_change_percentage_24h} />
+                </div>
+                
+               
               </div>
             </Link>
           ))}
