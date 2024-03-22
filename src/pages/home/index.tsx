@@ -7,7 +7,7 @@ import './styles.scss';
 export const Home = () => {
     return (
         <>
-        <div className="mx-auto min-h-screen flex flex-col bg-gradient-to-r bg-sky-900 from-slate-900 ">
+        <div className="mx-auto min-h-screen flex flex-col bg-gradient-to-r bg-sky-900 from-slate-900 container-main">
 
         < Header />
 

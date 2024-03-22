@@ -1,6 +1,6 @@
 import { createSlice } from '@reduxjs/toolkit';
 
-type AlertSeverity = 'error' | 'warning' | 'info' | 'success';
+
 
 interface WalletState {
     account: string;
@@ -18,7 +18,7 @@ interface WalletState {
     snackbar: {
       open: false,
       message: '',
-      severity: 'info' as AlertSeverity,
+      severity: 'info'
     },
   };
 
