@@ -25,10 +25,12 @@ const Chart: React.FC<ChartProps> = ({ coinId }) => {
   });
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState<string | null>(null);
+  const [chartOptions, setChartOptions] = useState({});
 
   
 
   useEffect(() => {
+    const isMobile = window.innerWidth < 768; 
     const loadData = async () => {
       setLoading(true);
       setError(null);
@@ -48,41 +50,42 @@ const Chart: React.FC<ChartProps> = ({ coinId }) => {
       }
     };
 
+    const options = {
+      maintainAspectRatio: !isMobile, // Isso precisa ser true para o aspectRatio ter efeito
+      aspectRatio: isMobile ? 1 : 1.3, // Valor padrão, ajuste conforme necessário para mudar a altura
+      responsive: true,
+      plugins: {
+        legend: {
+          position: 'top' as const, // Posiciona a legenda no topo do gráfico
+        },
+        title: {
+          display: true,
+          text: 'Preço da Criptomoeda ao Longo do Tempo', // Título do gráfico
+        },
+      },
+      scales: {
+        
+        y: {
+          beginAtZero: false,
+          type: 'linear' as const,
+         
+        }
+      },
+      
+    };
+
     loadData();
+    setChartOptions(options);
   }, [coinId]);
 
-  if (loading) return <p>Carregando gráfico...</p>;
+  if (loading) return <p className='text-gray-400'>Carregando gráfico...</p>;
   if (error) return <p>{error}</p>;
 
 
 
 
-  // Opções de personalização do gráfico
-  const options = {
-    maintainAspectRatio: true, // Isso precisa ser true para o aspectRatio ter efeito
-    aspectRatio: 1.3, // Valor padrão, ajuste conforme necessário para mudar a altura
-    responsive: true,
-    plugins: {
-      legend: {
-        position: 'top' as const, // Posiciona a legenda no topo do gráfico
-      },
-      title: {
-        display: true,
-        text: 'Preço da Criptomoeda ao Longo do Tempo', // Título do gráfico
-      },
-    },
-    scales: {
-      
-      y: {
-        beginAtZero: false,
-        type: 'linear' as const,
-       
-      }
-    },
-    // Mais opções de personalização aqui
-  };
-
-  return <Line data={chartData} options={options}  />;
+  
+  return <Line data={chartData} options={chartOptions}  />;
 };
 
 export default Chart;

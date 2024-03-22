@@ -7,6 +7,8 @@ import { Header } from "../header";
 import CryptoChart from "../graphic";
 import { Footer } from "../footer";
 
+import './styles.scss'
+
 
 
 
@@ -39,10 +41,11 @@ export const CryptoDetails = () => {
         <>
        <div className="container mx-auto p-4 container-main">
                 <Header />
-                <div className="flex justify-center h-5/6 ">
-                <div className="flex flex-wrap bg-gray-900 gap-4 rounded-lg shadow-md p-6 w-8/12 h-5/6 mt-16 container-crypto-details">
+               
+                <div className="flex flex-col lg:flex-row justify-center items-center min-h-screen ">
+                <div className="main-cont flex flex-wrap bg-gray-900  gap-4 rounded-lg shadow-md p-6 mx-auto w-full lg:w-11/12 xl:w-10/12 h-full mt-16 container-crypto-details">
                     <div className="flex-1">
-                        <div className="flex items-center gap-4 mb-4">
+                        <div className="flex items-center gap-4 mb-4 flex-wrap">
                             <img src={details.image.large} alt="Imagem da Moeda" className="w-20 h-20" />
                             <h2 className="text-white capitalize text-2xl">{details.name}</h2>
                             <p className="text-sm py-0.5 px-2.5 ml-2 bg-sky-600 text-sky-600 bg-opacity-25 rounded">{details.symbol}</p>
@@ -53,10 +56,10 @@ export const CryptoDetails = () => {
                             <p className="text-sky-500">Alta nas últimas 24h: <span className="text-white text-xl font-bold">${details.high_24h}</span></p>
                             <p className="text-sky-500">Baixa nas últimas 24h: <span className="text-white text-xl font-bold">${details.low_24h}</span></p>
                             <p className="text-sky-500">Volume nas últimas 24h: <span className="text-white text-xl font-bold">${details.total_volume}</span></p>
-                            <div className="flex w-full mt-4 ">Indicator</div>
+                           
                         </div>
                     </div>
-                    <div className="flex-1 ">
+                    <div className="w-full lg:w-6/12">
                         <CryptoChart coinId={id as string} />
                     </div>
                 </div>
