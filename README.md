@@ -26,7 +26,7 @@ Para executar o Crypto Compass Project localmente, siga estas etapas:
 
 **Acesso Disponível-DEPLOY** 
 Para melhor exibir o projeto fiz o deploy dele pela vercel. Ao acessar ele pode pedir autenticaçao pelo gitHub.
-`https://crypto-compass-project-b32b7biwo-lucas-pivottos-projects.vercel.app/`
+[crypto-compass-vercel](https://crypto-compass-project-b32b7biwo-lucas-pivottos-projects.vercel.app/)
 
 **Observação:** Certifique-se de ter o Node.js e npm (ou Yarn) instalados em sua máquina antes de prosseguir
 qualque dúvida estare a disposição no email.
