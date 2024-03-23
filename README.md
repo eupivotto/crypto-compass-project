@@ -1,6 +1,12 @@
 # Crypto Compass Project
 
-O Crypto Compass Project é um aplicativo web construído em React, TypeScript e Tailwind CSS, projetado para fornecer uma plataforma simples e intuitiva para acompanhar informações sobre criptomoedas.
+O Crypto Compass Project é um aplicativo web construído em React, TypeScript e Tailwind CSS, projetado para fornecer uma plataforma simples e intuitiva para acompanhar informações sobre criptomoedas. Este projeto
+foi feito exclusivamente para a vaga de Front-End React (Vite).
+
+
+## Criação da Marca
+Criei a logo Crypto Compass com adobe photoshop, pensando na identidade visual
+de UI/UX. 
 
 ## Principais Recursos
 
@@ -18,14 +24,20 @@ Para executar o Crypto Compass Project localmente, siga estas etapas:
 3. Inicie o servidor de desenvolvimento com `npm start` ou `yarn start`
 4. O aplicativo estará disponível em `http://localhost:3000` no seu navegador.
 
-**Observação:** Certifique-se de ter o Node.js e npm (ou Yarn) instalados em sua máquina antes de prosseguir.
+**Observação:** Certifique-se de ter o Node.js e npm (ou Yarn) instalados em sua máquina antes de prosseguir
+qualque dúvida estare a disposição no email.
 
-## Contribuição
+## Vale a Pena Conferir
 
-Se você quiser contribuir para o Crypto Compass Project, por favor:
+Resolvi implementar o componente de transferência de forma básica, uma interação 3D com 
+a logo do Metamask e perfil de usuário e pagina de contato responsivos na aplicação pronto para 
+implementação de funcionalidades. Espero que gostem!
 
-1. Abra uma issue para discutir a nova funcionalidade ou correção de bugs.
-2. Fork o repositório e crie uma branch para sua contribuição (`git checkout -b feature/MinhaNovaFeature`).
-3. Faça suas alterações e envie um pull request para revisão.
 
-Estamos ansiosos para receber suas contribuições!
+
+
+## Agradecimento
+
+Desde já agradecendo a oportunidade e feliz pela chance de começarmos uma história juntos!
+
+
