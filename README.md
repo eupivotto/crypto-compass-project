@@ -1,99 +1,31 @@
-# Crypto Compassa Project
+# Crypto Compass Project
 
-Um parágrafo da descrição do projeto vai aqui
+O Crypto Compass Project é um aplicativo web construído em React, TypeScript e Tailwind CSS, projetado para fornecer uma plataforma simples e intuitiva para acompanhar informações sobre criptomoedas.
 
-## 🚀 Começando
+## Principais Recursos
 
-Essas instruções permitirão que você obtenha uma cópia do projeto em operação na sua máquina local para fins de desenvolvimento e teste.
+- **Visualização de Criptomoedas:** Veja informações detalhadas sobre várias criptomoedas, incluindo preço atual, variação nas últimas 24 horas, alta e baixa nas últimas 24 horas e volume de negociação.
+- **Gráficos Interativos:** Visualize o histórico de preços das criptomoedas ao longo do tempo com gráficos interativos.
+- **Carteira Virtual:** Acompanhe seu saldo de criptomoedas e realize transferências entre contas virtuais.
+- **Integração com MetaMask:** Conecte-se à sua carteira MetaMask para realizar transações reais de criptomoedas.
 
-Consulte **[Implantação](#-implanta%C3%A7%C3%A3o)** para saber como implantar o projeto.
+## Como Instalar e Executar
 
-### 📋 Pré-requisitos
+Para executar o Crypto Compass Project localmente, siga estas etapas:
 
-De que coisas você precisa para instalar o software e como instalá-lo?
+1. Clone este repositório em sua máquina local usando `git clone https://github.com/eupivotto/crypto-compass-project.git`
+2. Instale as dependências do projeto executando `npm install` ou `yarn install`
+3. Inicie o servidor de desenvolvimento com `npm start` ou `yarn start`
+4. O aplicativo estará disponível em `http://localhost:3000` no seu navegador.
 
-```
-Dar exemplos
-```
+**Observação:** Certifique-se de ter o Node.js e npm (ou Yarn) instalados em sua máquina antes de prosseguir.
 
-### 🔧 Instalação
+## Contribuição
 
-Uma série de exemplos passo-a-passo que informam o que você deve executar para ter um ambiente de desenvolvimento em execução.
+Se você quiser contribuir para o Crypto Compass Project, por favor:
 
-Diga como essa etapa será:
+1. Abra uma issue para discutir a nova funcionalidade ou correção de bugs.
+2. Fork o repositório e crie uma branch para sua contribuição (`git checkout -b feature/MinhaNovaFeature`).
+3. Faça suas alterações e envie um pull request para revisão.
 
-```
-Dar exemplos
-```
-
-E repita:
-
-```
-Até finalizar
-```
-
-Termine com um exemplo de como obter dados do sistema ou como usá-los para uma pequena demonstração.
-
-## ⚙️ Executando os testes
-
-Explicar como executar os testes automatizados para este sistema.
-
-### 🔩 Analise os testes de ponta a ponta
-
-Explique que eles verificam esses testes e porquê.
-
-```
-Dar exemplos
-```
-
-### ⌨️ E testes de estilo de codificação
-
-Explique que eles verificam esses testes e porquê.
-
-```
-Dar exemplos
-```
-
-## 📦 Implantação
-
-Adicione notas adicionais sobre como implantar isso em um sistema ativo
-
-## 🛠️ Construído com
-
-Mencione as ferramentas que você usou para criar seu projeto
-
-* [Dropwizard](http://www.dropwizard.io/1.0.2/docs/) - O framework web usado
-* [Maven](https://maven.apache.org/) - Gerente de Dependência
-* [ROME](https://rometools.github.io/rome/) - Usada para gerar RSS
-
-## 🖇️ Colaborando
-
-Por favor, leia o [COLABORACAO.md](https://gist.github.com/usuario/linkParaInfoSobreContribuicoes) para obter detalhes sobre o nosso código de conduta e o processo para nos enviar pedidos de solicitação.
-
-## 📌 Versão
-
-Nós usamos [SemVer](http://semver.org/) para controle de versão. Para as versões disponíveis, observe as [tags neste repositório](https://github.com/suas/tags/do/projeto). 
-
-## ✒️ Autores
-
-Mencione todos aqueles que ajudaram a levantar o projeto desde o seu início
-
-* **Um desenvolvedor** - *Trabalho Inicial* - [umdesenvolvedor](https://github.com/linkParaPerfil)
-* **Fulano De Tal** - *Documentação* - [fulanodetal](https://github.com/linkParaPerfil)
-
-Você também pode ver a lista de todos os [colaboradores](https://github.com/usuario/projeto/colaboradores) que participaram deste projeto.
-
-## 📄 Licença
-
-Este projeto está sob a licença (sua licença) - veja o arquivo [LICENSE.md](https://github.com/usuario/projeto/licenca) para detalhes.
-
-## 🎁 Expressões de gratidão
-
-* Conte a outras pessoas sobre este projeto 📢;
-* Convide alguém da equipe para uma cerveja 🍺;
-* Um agradecimento publicamente 🫂;
-* etc.
-
-
----
-⌨️ com ❤️ por [Armstrong Lohãns](https://gist.github.com/lohhans) 😊
+Estamos ansiosos para receber suas contribuições!

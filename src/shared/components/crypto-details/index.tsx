@@ -14,6 +14,7 @@ import './styles.scss'
 
 export const CryptoDetails = () => {
     const { id } = useParams<{id: string}>();
+    // aqui vasmo armazenar os dados retornados pela api de detalhes e alterando o estado quando possivel
     const [details, setDetails] = useState<CryptoDetailType | null>(null);
 
     useEffect(() => {
