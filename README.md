@@ -6,7 +6,7 @@ foi feito exclusivamente para a vaga de Front-End React (Vite).
 
 ## Criação da Marca
 Criei a logo Crypto Compass com adobe photoshop, pensando na identidade visual
-de UI/UX. 
+de navegação e cripto e também utilizando UI/UX. 
 
 ## Principais Recursos
 
@@ -53,6 +53,6 @@ implementação de funcionalidades. Espero que gostem!
 
 ## Agradecimento
 
-Desde já agradecendo a oportunidade e feliz pela chance de começarmos uma história juntos!
+Desde já agradecendo a oportunidade e fico feliz pela chance de começarmos uma história juntos!
 
 
