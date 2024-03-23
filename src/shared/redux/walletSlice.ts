@@ -33,6 +33,9 @@ export const walletSlice = createSlice({
       setBalance: (state, action) => {
         state.balance = action.payload;
       },
+      setTranfer: (state, action) => {
+        state.balance = action.payload;
+      },
       setSnackbar: (state, action) => {
         state.snackbar = { ...state.snackbar, ...action.payload };
       },
