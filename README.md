@@ -22,7 +22,11 @@ Para executar o Crypto Compass Project localmente, siga estas etapas:
 1. Clone este repositório em sua máquina local usando `git clone https://github.com/eupivotto/crypto-compass-project.git`
 2. Instale as dependências do projeto executando `npm install` ou `yarn install`
 3. Inicie o servidor de desenvolvimento com `npm start` ou `yarn start`
-4. O aplicativo estará disponível em `http://localhost:3000` no seu navegador.
+4. O aplicativo estará disponível em `http://localhost:3000`no meu caso aqui é o :5173 no seu navegador.
+
+**Acesso Disponível-DEPLOY** 
+Para melhor exibir o projeto fiz o deploy dele pela vercel. Ao acessar ele pode pedir autenticaçao pelo gitHub.
+`https://crypto-compass-project-b32b7biwo-lucas-pivottos-projects.vercel.app/`
 
 **Observação:** Certifique-se de ter o Node.js e npm (ou Yarn) instalados em sua máquina antes de prosseguir
 qualque dúvida estare a disposição no email.
