@@ -70,7 +70,8 @@ export const GetWallet = () => {
 
     return formatted;
   }
-
+ 
+  //aqui resgatamos os dados do Saldo do usuario, assim permitido por ele
   const updateBalance = async (account: string) => {
     try {
       const balance = await getBalance(account);
@@ -125,7 +126,8 @@ export const GetWallet = () => {
    
 
     return (
-      <ThemeProvider theme={darkTheme}>
+      //Trabalhando o estilo do alert
+      <ThemeProvider theme={darkTheme}>  
       <Alert 
         className="fixed top-2/3 left-1/2 transform -translate-x-1/2 -translate-y-1/2 z-50"
         onClose={() => dispatch(closeSnackbar())}

@@ -22,19 +22,19 @@ export const Footer = () => {
       <div className="flex space-x-6 pt-5">
         <a href="#" className="hover:text-blue-600">
           <span className="sr-only">Facebook</span>
-          <GithubLogo size={32} />
+          <GithubLogo size={20} />
         </a>
         <a href="#" className="hover:text-blue-600">
           <span className="sr-only">Instagram</span>
-          <LinkedinLogo size={32} />
+          <LinkedinLogo size={20} />
         </a>
         <a href="#" className="hover:text-blue-600">
           <span className="sr-only">Instagram</span>
-          <EnvelopeSimple size={32} />
+          <EnvelopeSimple size={20} />
         </a>
         <a href="#" className="hover:text-blue-600">
           <span className="sr-only">Instagram</span>
-          <WhatsappLogo size={32} />
+          <WhatsappLogo size={20} />
         </a>
         
       </div>

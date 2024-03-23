@@ -1,5 +1,5 @@
 
-
+//funcao usada para calcular a porcentagem percentual e renderizala como esperavamos na aplicacao
 export const HigthLowIndicator = ({ changePercentage }: { changePercentage: number }) => {
 
     const formattedPercentage = changePercentage.toFixed(2);

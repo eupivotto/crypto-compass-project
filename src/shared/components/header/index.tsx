@@ -7,10 +7,10 @@ import { Disclosure, Menu, Transition } from "@headlessui/react";
 import { NavLink } from "react-router-dom";
 import { Bars3Icon, BellIcon, XMarkIcon, } from "@heroicons/react/24/outline";
 
+// obejto do menu que podemos ir adicionando abas
 const navigation = [
   { name: "Painel", href: "/" },
   { name: "Carteira", href: "/carteira"},
-  { name: "Transações", href: "/transacoes" },
   { name: "Contato", href: "/contato"},
 ];
 

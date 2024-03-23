@@ -9,7 +9,7 @@ import { Footer } from "../footer";
 
 import './styles.scss'
 
-
+// Pagina de detalhes da Moeda
 
 
 export const CryptoDetails = () => {
@@ -17,6 +17,7 @@ export const CryptoDetails = () => {
     const [details, setDetails] = useState<CryptoDetailType | null>(null);
 
     useEffect(() => {
+        //chamada da api de detalhes especificos da moeda
         const fetchDetails = async () => {
             try {
                 const data = await getCryptoDetails(id!);
@@ -30,6 +31,7 @@ export const CryptoDetails = () => {
 
     }, [id]);
 
+    // se os dados da api de detalhes da moeda especifica estiver correta, o loading e acionado até que o componente esteja montado
     if (!details) {
         return <div className="flex justify-center items-center min-h-screen bg-gray-900">
                  <SkewLoader color="#36afd6" />
@@ -39,7 +41,7 @@ export const CryptoDetails = () => {
    
     return (
         <>
-       <div className="container mx-auto p-4 container-main">
+       <div className=" mx-auto p-4 container-main">
                 <Header />
                
                 <div className="flex flex-col lg:flex-row justify-center items-center min-h-screen ">

@@ -1,6 +1,7 @@
 import { useEffect, useRef } from "react"
 import MetaMaskLogo from '@metamask/logo'
 
+//implementacao da logo 3d MetaMask
 
 export const LogoMetaModel = () => {
 

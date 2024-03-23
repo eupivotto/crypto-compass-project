@@ -21,7 +21,6 @@ export async function getMetaMaskProvider() {
 
     const web3 = new Web3(window.ethereum);
     const accounts = await web3.eth.requestAccounts();
-    console.log(accounts);
     if(!accounts || accounts.length === 0) throw new Error('Permission required');
 
     return web3;

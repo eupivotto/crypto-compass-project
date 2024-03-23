@@ -1,13 +1,14 @@
-// Chart.js
+// usando a biblioteca Chart.js
 import  { useState, useEffect } from 'react';
 import { Line } from 'react-chartjs-2';
 import { Chart as ChartJS, ChartData, CategoryScale, LinearScale, PointElement, LineElement, Title, Tooltip, Legend } from 'chart.js';
-import { fetchChartData } from '../../../services/cryptoApy'; // Ajuste o caminho conforme necessário
+import { fetchChartData } from '../../../services/cryptoApy'; 
 
 interface ChartProps {
     coinId: string;
   }
 
+// algumas propriedades que pdemos usar para o grafico
 ChartJS.register(CategoryScale, LinearScale, PointElement, LineElement, Title, Tooltip, Legend);
 
 const Chart: React.FC<ChartProps> = ({ coinId }) => {
@@ -28,7 +29,7 @@ const Chart: React.FC<ChartProps> = ({ coinId }) => {
   const [chartOptions, setChartOptions] = useState({});
 
   
-
+  // aqui chamando a api para trabalhar com o gráfico
   useEffect(() => {
     const isMobile = window.innerWidth < 768; 
     const loadData = async () => {
@@ -51,8 +52,8 @@ const Chart: React.FC<ChartProps> = ({ coinId }) => {
     };
 
     const options = {
-      maintainAspectRatio: !isMobile, // Isso precisa ser true para o aspectRatio ter efeito
-      aspectRatio: isMobile ? 1 : 1.3, // Valor padrão, ajuste conforme necessário para mudar a altura
+      maintainAspectRatio: !isMobile, 
+      aspectRatio: isMobile ? 1 : 1.3, 
       responsive: true,
       plugins: {
         legend: {
